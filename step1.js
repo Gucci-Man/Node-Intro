@@ -4,7 +4,7 @@ const process = require('process');
 function cat(path) {
     fs.readFile(path, 'utf8', (err, data) => {
         if(err) {
-            console.log("ERROR:", err);
+            console.error(err);
             process.exit(1);
         }
         console.log(data);

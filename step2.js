@@ -5,7 +5,7 @@ const axios = require('axios');
 function cat(path) {
     fs.readFile(path, 'utf8', (err, data) => {
         if(err) {
-            console.log("ERROR:", err);
+            console.error(err);
             process.exit(1);
         }
         console.log(data);
@@ -17,7 +17,7 @@ async function webCat(URL) {
         let resp = await axios.get(URL);
         console.log(resp.data)
     } catch (err) {
-        console.log("ERROR:", err);
+        console.error(err);
         process.exit(1)
     }
 }
